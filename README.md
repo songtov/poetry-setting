@@ -2,6 +2,8 @@
 
 A modern Python project template using Poetry for dependency management, featuring best practices and development tools.
 
+> ⭐ **Note**: If you find this template helpful, please give it a star! That's all I need. 😊
+
 ## 🚀 Features
 
 - **Poetry** for dependency management
@@ -18,7 +20,8 @@ A modern Python project template using Poetry for dependency management, featuri
 ## 📋 Prerequisites
 
 - Python 3.12 or higher
-- Poetry 1.8.3 or higher
+- [Poetry](https://python-poetry.org/docs/) 1.8.3 or higher
+- [Poe the Poet](https://poethepoet.natn.io/index.html) for task management
 - Docker (optional)
 
 ## 🛠️ Installation
@@ -29,21 +32,35 @@ A modern Python project template using Poetry for dependency management, featuri
    cd poetry-setting
    ```
 
-2. Install dependencies:
+2. Install Poetry (if not already installed):
+   ```bash
+   pipx install poetry
+   ```
+
+3. Install Poe the Poet:
+   ```bash
+   pipx install poethepoet
+   ```
+
+4. Install project dependencies:
    ```bash
    poetry install
+   ```
+
+5. Set up environment variables:
+   ```bash
+   cp default.env .env
    ```
 
 ## 🏗️ Project Structure
 
 ```
 .
-├── app/                # Main application code
+├── app/               # Main application code
 ├── tests/             # Test files
 ├── Dockerfile         # Docker configuration
 ├── pyproject.toml     # Poetry configuration
 ├── poetry.lock        # Locked dependencies
-├── .env               # Environment variables
 └── default.env        # Default environment variables
 ```
 
