@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "poetry-setting"
+version = "0.1.0"
+description = ""
+authors = ["songtov <songchiho777@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+ruff = "^0.11.5"
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
+pytest-watcher = "^0.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks.lint]
+shell = "black . && isort . && ruff check ."
+
+[tool.poe.tasks.test]
+cmd = "pytest -v --cov=. --cov-report=term --cov-report=html:htmlcov"
+
+[tool.poe.tasks.watch-test]
+cmd = "ptw . --now --clear"
+
+[tool.poe.tasks.run]
+help = "Run the main application"
+cmd = "python -m app.main"
+envfile = ".env"
